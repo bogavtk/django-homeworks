@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNS Lookup</title>
+</head>
+<body>
+    <h1>DNS Lookup</h1>
+    <form method="post" action="{% url 'lookup' %}">
+        {% csrf_token %}
+        <input type="text" name="domain" placeholder="Domain name" required>
+        <button type="submit">Lookup</button>
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
